@@ -1,5 +1,7 @@
 <?php
 /*
+ * Sample that get labels from an elements range according some conditions.
+ *
  * Configuration:
  *      $elements  : Array of objects like a Number class that contain the range of elements to evaluate.
  *      $conditions: Array that contain the the label (index) and the numbers for obtain all multiples.

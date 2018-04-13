@@ -1,5 +1,5 @@
 <?php
-declare(strict_types=1);
+//declare(strict_types=1);  // PHP7 Only
 
 use PHPUnit\Framework\TestCase;
 

@@ -1,12 +1,9 @@
 <?php
 /**
- * Class for replace each letter of a word with the next letter of the alphabet.
+ * Class main that make the elements evaluation (like get multiples number)
+ * for your object type like the numbers (or others).
  * Review: PHP 7.2.2
- * Restrictions:
- *    - Work with some characters of latin-alfhabet; exception tilde letters.
  */
-
-declare(strict_types=1);
 
 namespace ElementsEvaluation;
 
@@ -26,6 +23,9 @@ class Number implements ElementsInterface {
         $this->range = $range;
     }
 
+    /**
+     * @return array
+     */
     public function getElementsRange() {
         $first_element  = reset($this->range);
         $last_element   = end($this->range);
@@ -33,6 +33,11 @@ class Number implements ElementsInterface {
         return range($first_element, $last_element);
     }
 
+    /**
+     * @param int $number
+     * @param array $conditionals
+     * @param array $result
+     */
     public function getMultiplesLabel($number = 0, $conditionals = array(), &$result = array()) {
         try {
             foreach ($conditionals as $label => $multiples) {
@@ -95,6 +100,9 @@ class ElementsOutput {
         $this->elements = $elements;
     }
 
+    /**
+     * @return string
+     */
     public function toJson() {
         $data = array (
             'result' => $this->elements->evaluate()
